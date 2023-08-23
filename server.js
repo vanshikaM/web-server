@@ -1,11 +1,10 @@
 var  express = require("express");
+var middleware = require("./middleware.js");
 var app = express();
 
-// app.get("/",function(req,res){
-//     res.send("Hello from Express");
-// })
+app.use(middleware.logger);
 
-app.get("/about",function(req,res){
+app.get("/about",middleware.requireAuthentication,function(req,res){
     res.send("Hello from about us page.");
 })
 
