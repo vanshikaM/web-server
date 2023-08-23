@@ -6,7 +6,7 @@ var app = express();
 // })
 
 app.get("/about",function(req,res){
-    res.send("Hello from about us page...");
+    res.send("Hello from about us page.");
 })
 
 app.use(express.static(__dirname+ '/'))
